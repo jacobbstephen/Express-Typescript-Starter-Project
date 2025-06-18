@@ -1,11 +1,15 @@
 import express from 'express'
+import {serverConfig} from './config';
+import pingRouter from './routers/v1/ping.router';
+import v1Router from './routers/v1/index.router';
+
 const app = express();
-const PORT = 3000;
 
-app.get('/ping', (req, res) => {
-    res.send('Pong')
-});
+app.use(pingRouter);
+app.use('/api/v1', v1Router);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
+console.log('Environment variables loaded');
+app.listen(serverConfig.PORT, () => {
+    console.log(`Server is running on ${serverConfig.PORT}`);
+    
 });
