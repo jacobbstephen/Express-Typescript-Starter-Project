@@ -8,7 +8,7 @@ const app = express();
 app.use(pingRouter);
 app.use('/api/v1', v1Router);
 
-console.log('Environment variables loaded');
+
 app.listen(serverConfig.PORT, () => {
     console.log(`Server is running on ${serverConfig.PORT}`);
     
