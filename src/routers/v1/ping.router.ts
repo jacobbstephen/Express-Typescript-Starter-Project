@@ -1,7 +1,8 @@
 import express from 'express'
+
 import { pingHandler } from '../../controller/ping.controller';
 
 const pingRouter = express.Router();
-pingRouter.get('/ping', pingHandler);
+pingRouter.use('/:id/comments', pingHandler);
 
 export default pingRouter;

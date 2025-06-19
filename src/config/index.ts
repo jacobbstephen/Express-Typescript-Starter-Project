@@ -8,6 +8,7 @@ type ServerConfig = {
     PORT: number,
 }
 console.log('Environment variables loaded');
+
 export const serverConfig: ServerConfig = {
     PORT: Number(process.env.PORT) || 3002
 };
